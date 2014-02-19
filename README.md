@@ -14,10 +14,14 @@ The Fantasy App will have 4 components.
 
 ### This Project: API Service
 
-#### Usage
+#### Setup
+
+1. Install [node.js](http://nodejs.org/)
+2. Install git
+3. Pull down and start the project
 
 ```
-> git clone git@github.com:calvinwiebe/fantasy-api.com.git
+> git clone git@github.com:calvinwiebe/fantasy-api.git
 > cd fantasy-api
 > npm install
 > cake dev
