@@ -8,6 +8,15 @@ _                   = require 'lodash'
 PORT = 3000
 makeResourceful server
 
+# setup plugins
+server.use restify.acceptParser(server.acceptable)
+server.use restify.authorizationParser()
+server.use restify.dateParser()
+server.use restify.queryParser()
+server.use restify.jsonp()
+server.use restify.gzipResponse()
+server.use restify.bodyParser()
+
 # setup all the routes for all of our resources.
 # By convention, each resource should have all _CRUD_
 # operations
