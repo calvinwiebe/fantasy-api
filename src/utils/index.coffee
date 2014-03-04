@@ -16,3 +16,13 @@ exports.requireAll = (rootPath) ->
         .forEach (m) ->
             modules[m] = require path.join rootPath, m
     return modules
+
+# Simple method to create a resource from a module of routes
+#
+exports.makeResourceful = (server) ->
+    server.resource = (resource, resourceModule) ->
+        server.get  "/#{resource}", resourceModule.index
+        server.get  "/#{resource}/new", resourceModule.new
+        server.post "/#{resource}", resourceModule.create
+        server.get  "/#{resource}/:id", resourceModule.show
+        server.del  "/#{resource}/:id", resourceModule.destroy

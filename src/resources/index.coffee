@@ -3,6 +3,4 @@
 #
 {requireAll} = require '../utils'
 
-modules = requireAll __dirname
-console.log modules
-module.exports = modules
+module.exports = requireAll __dirname
